@@ -1,0 +1,53 @@
+import csv
+import random
+import faker
+from datetime import datetime, timedelta
+
+# Initialize Faker library
+fake = faker.Faker()
+
+# Define variable names
+variables = ["koreUserId","botId","accountId","XAuthToken","XCorrelationId","customerId","accountNumber",
+             "numOfTransactions","status","startDate","endDate","sort","transactionAmount","category","debitOrCredit"]
+
+# Open CSV file
+with open('sample.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    
+    # Write header
+    writer.writerow(variables)
+
+    # Generate dummy data for each variable
+    for _ in range(100):  # Generate 100 rows of data
+        data = []
+        for variable in variables:
+            if variable in ["koreUserId", "botId", "accountId", "XAuthToken", "XCorrelationId", "customerId", "accountNumber"]:
+                # Generate random numbers for IDs
+                data.append(random.randint(1000, 9999))
+            elif variable == "numOfTransactions":
+                # Generate random numbers for number of transactions
+                data.append(random.randint(1, 100))
+            elif variable == "status":
+                # Generate random status
+                data.append(random.choice(["Active", "Inactive", "Pending", "", ""]))
+            elif variable in ["startDate", "endDate"]:
+                # Generate random dates
+                data.append((datetime.now() - timedelta(days=random.randint(1, 365))).strftime('%Y-%m-%d'))
+            elif variable == "sort":
+                # Generate random sort order
+                data.append(random.choice(["asc", "desc", "", ""]))
+            elif variable == "transactionAmount":
+                # Generate random transaction amount
+                data.append(random.uniform(10.0, 1000.0))
+            elif variable == "category":
+                # Generate random category
+                data.append(fake.word(ext_word_list=["Groceries", "Rent", "Transport", "Utilities", "", ""]))
+            elif variable == "debitOrCredit":
+                # Generate random debit or credit
+                data.append(random.choice(["Debit", "Credit", "", ""]))
+            else:
+                # Generate empty string for unknown variables
+                data.append("")
+        
+        # Write data to CSV file
+        writer.writerow(data)

@@ -1,0 +1,29 @@
+import random
+import csv
+from faker import Faker
+
+fake = Faker()
+
+# Define the names of the columns
+columns = ['koreUserId', 'botId', 'userCode', 'accountId', 'customerId', 'status']
+
+# Define the possible status values
+status_values = ['active', 'inactive', 'pending', 'suspended']
+
+# Open a new CSV file
+with open('dummy_data.csv', 'w', newline='') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=columns)
+
+    # Write the header row
+    writer.writeheader()
+
+    # Generate 100 rows of dummy data
+    for _ in range(100):
+        writer.writerow({
+            'koreUserId': fake.uuid4(),
+            'botId': fake.uuid4(),
+            'userCode': fake.pyint(min_value=1000, max_value=9999),
+            'accountId': fake.uuid4(),
+            'customerId': fake.uuid4(),
+            'status': random.choice(status_values),
+        })

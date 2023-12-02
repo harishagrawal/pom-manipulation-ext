@@ -1,0 +1,47 @@
+import csv
+import random
+import string
+import faker
+
+# Create a faker object for generating dummy data
+fake = faker.Faker()
+
+# Define the CSV file headers
+headers = ['customerId', 'koreUserId', 'botId', 'accountId', 'Authorization', 'X-Auth-token', 'X-CORRELATION-ID']
+
+# Define a function to generate a random string of a given length
+def random_string(length):
+    return ''.join(random.choice(string.ascii_letters) for _ in range(length))
+
+# Define a function to generate a random number of a given length
+def random_number(length):
+    return ''.join(random.choice(string.digits) for _ in range(length))
+
+# Define a function to generate a random boolean value
+def random_boolean():
+    return random.choice([True, False])
+
+# Define a function to generate a random date
+def random_date():
+    return fake.date()
+
+# Open the CSV file in write mode
+with open('dummy_data.csv', 'w', newline='') as csvfile:
+    # Create a CSV writer object
+    writer = csv.writer(csvfile)
+
+    # Write the headers to the CSV file
+    writer.writerow(headers)
+
+    # Generate and write 100 rows of dummy data to the CSV file
+    for _ in range(100):
+        customerId = random_number(10) if random_boolean() else random_string(10)
+        koreUserId = random_string(10) if random_boolean() else random_number(10)
+        botId = random_string(10) if random_boolean() else random_number(10)
+        accountId = random_string(10) if random_boolean() else random_number(10)
+        Authorization = random_string(20) if random_boolean() else ""
+        X_Auth_token = random_string(20) if random_boolean() else ""
+        X_CORRELATION_ID = random_string(20) if random_boolean() else ""
+
+        # Write the row of dummy data to the CSV file
+        writer.writerow([customerId, koreUserId, botId, accountId, Authorization, X_Auth_token, X_CORRELATION_ID])

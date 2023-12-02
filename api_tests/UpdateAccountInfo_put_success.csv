@@ -1,0 +1,30 @@
+import csv
+import faker
+import random
+
+fake = faker.Faker()
+
+header = ['koreUserId', 'botId', 'accountId', 'X-Auth-token', 'X-CORRELATION-ID', 'accountNumber', 'customerId', 'email', 'alternatePhoneNumber', 'isAlternateMobileNumber', 'phone', 'isPrimaryMobileNumber', 'location', 'isStatement']
+
+with open('fake_data.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(header)
+    
+    for _ in range(100):  # generating 100 rows of data
+        row = [
+            fake.random_int(min=1000, max=9999),  # koreUserId
+            fake.random_int(min=1000, max=9999),  # botId
+            fake.random_int(min=1000, max=9999),  # accountId
+            fake.sha256(),  # X-Auth-token
+            fake.uuid4(),  # X-CORRELATION-ID
+            fake.random_int(min=100000, max=999999),  # accountNumber
+            fake.random_int(min=1000, max=9999),  # customerId
+            fake.email(),  # email
+            fake.phone_number(),  # alternatePhoneNumber
+            random.choice([True, False]),  # isAlternateMobileNumber
+            fake.phone_number(),  # phone
+            random.choice([True, False]),  # isPrimaryMobileNumber
+            fake.address().replace(',', ''),  # location
+            random.choice([True, False])  # isStatement
+        ]
+        writer.writerow(row)

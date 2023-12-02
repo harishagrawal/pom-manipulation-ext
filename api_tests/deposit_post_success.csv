@@ -1,0 +1,31 @@
+import csv
+import random
+import faker
+from random import randint
+
+fake = faker.Faker()
+
+# Define the header
+header = ['koreUserId', 'botId', 'accountId', 'customerId', 'sourceAccountId', 'amount', 'currency', 'frontImage', 'backImage']
+
+# Open the file in write mode
+with open('dummy_data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+
+    # Write the header
+    writer.writerow(header)
+
+    # Generate 100 rows of dummy data
+    for _ in range(100):
+        koreUserId = fake.uuid4()
+        botId = fake.uuid4()
+        accountId = fake.uuid4()
+        customerId = fake.uuid4()
+        sourceAccountId = fake.uuid4()
+        amount = round(random.uniform(1000.50, 5000.50), 2)
+        currency = random.choice(['USD', 'EUR', 'GBP', 'JPY', 'AUD'])
+        frontImage = f"https://dummyimage.com/{randint(100,999)}"
+        backImage = f"https://dummyimage.com/{randint(100,999)}"
+        
+        # Write the row
+        writer.writerow([koreUserId, botId, accountId, customerId, sourceAccountId, amount, currency, frontImage, backImage])

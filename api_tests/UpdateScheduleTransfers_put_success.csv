@@ -1,0 +1,33 @@
+import csv
+import random
+import faker
+from datetime import datetime, timedelta
+
+# Initialize faker generator
+fake = faker.Faker()
+
+# Define headers
+headers = ["paymentId", "customerId", "amount", "scheduledDate", "sourceAccountId", "targetAccountId"]
+
+# Define number of rows
+num_rows = 10
+
+# Open or create CSV file
+with open("dummy_data.csv", "w", newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    
+    # Write headers
+    writer.writerow(headers)
+    
+    # Generate and write data rows
+    for _ in range(num_rows):
+        payment_id = random.randint(1000, 9999)
+        customer_id = random.randint(1000, 9999)
+        amount = round(random.uniform(10.5, 9999.5), 2)
+        scheduled_date = (datetime.now() + timedelta(days=random.randint(1,365))).strftime('%Y-%m-%d')
+        source_account_id = random.randint(1000, 9999)
+        target_account_id = random.randint(1000, 9999)
+        
+        row = [payment_id, customer_id, amount, scheduled_date, source_account_id, target_account_id]
+        
+        writer.writerow(row)

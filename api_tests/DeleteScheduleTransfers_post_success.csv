@@ -1,0 +1,28 @@
+import csv
+import faker
+
+# Instantiate a Faker object
+fake = faker.Faker()
+
+# Define the column names
+columns = ['paymentId', 'updateTransferType', 'customerId']
+
+# Define the number of rows to generate
+num_rows = 10
+
+# Open a new CSV file
+with open('dummy_data.csv', 'w', newline='') as csvfile:
+    
+    # Create a CSV writer
+    writer = csv.DictWriter(csvfile, fieldnames=columns)
+    
+    # Write the header row
+    writer.writeheader()
+    
+    # Generate and write the data rows
+    for _ in range(num_rows):
+        writer.writerow({
+            'paymentId': fake.unique.random_number(digits=5, fix_len=True),
+            'updateTransferType': fake.random_element(elements=('wire', 'cash', 'online')),
+            'customerId': fake.unique.random_number(digits=5, fix_len=True)
+        })

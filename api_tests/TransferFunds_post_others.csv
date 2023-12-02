@@ -1,0 +1,29 @@
+import csv
+import random
+import faker
+from datetime import datetime
+
+def generate_dummy_data(file_name, num_rows):
+    fake = faker.Faker()
+    with open(file_name, 'w', newline='') as csvfile:
+        fieldnames = ['koreUserId', 'botId', 'userCode', 'accountId', 'customerId', 'amount', 'currency', 'sourceAccountId', 'targetAccountId', 'date', 'description', 'TransactionType', 'PaymentType']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for i in range(num_rows):
+            writer.writerow({
+                'koreUserId': fake.pyint(),
+                'botId': fake.pyint(),
+                'userCode': fake.pystr(),
+                'accountId': fake.pyint() if random.choice([True, False]) else fake.pystr(),
+                'customerId': fake.pyint() if random.choice([True, False]) else fake.pystr(),
+                'amount': fake.pydecimal(left_digits=4, right_digits=2, positive=True),
+                'currency': fake.currency_code(),
+                'sourceAccountId': fake.pyint(),
+                'targetAccountId': fake.pyint(),
+                'date': fake.date(pattern="%Y-%m-%d", end_datetime=datetime(2022, 1, 1)),
+                'description': fake.sentence(nb_words=6),
+                'TransactionType': random.choice(['Deposit', 'Withdrawal', 'Transfer']),
+                'PaymentType': random.choice(['Cash', 'Cheque', 'Online'])
+            })
+
+generate_dummy_data('dummy_data.csv', 100)

@@ -1,0 +1,21 @@
+import csv
+from faker import Faker
+
+# Initialize faker generator
+fake = Faker()
+
+# Define column headers
+fields = ['koreUserId', 'botId', 'accountId', 'X-Auth-token', 'X-CORRELATION-ID', 'customerId']
+
+# Define a function to generate a single row of data
+def generate_data():
+    return [fake.pyint(), fake.pyint(), fake.pyint(), fake.sha256(), fake.uuid4(), fake.pyint()]
+
+# Create data rows
+data_rows = [generate_data() for _ in range(10)]
+
+# Write data to a CSV file
+with open('dummy_data.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(fields)
+    writer.writerows(data_rows)

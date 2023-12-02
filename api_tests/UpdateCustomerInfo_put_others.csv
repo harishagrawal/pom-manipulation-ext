@@ -1,0 +1,37 @@
+import csv
+import random
+import string
+import faker
+
+# Create a Faker instance
+fake = faker.Faker()
+
+# Define the headers
+headers = ["koreUserId","botId","accountId","X-Auth-token","X-CORRELATION-ID","customerId","email","alternatePhoneNumber","isAlternateMobileNumber","phone","isPrimaryMobileNumber","location"]
+
+# Create a list of dict, each dict contains row data
+rows = []
+
+for i in range(20): # Generate 20 rows
+    row = {}
+    for header in headers:
+        if "Id" in header or "token" in header:
+            row[header] = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10)) # Generate random string
+        elif "email" in header:
+            row[header] = random.randint(1000,9999) if i%2 == 0 else fake.email() # Generate inappropriate data type every second row
+        elif "phone" in header:
+            row[header] = fake.phone_number() if i%3 != 0 else ''.join(random.choices(string.ascii_uppercase + string.digits, k=10)) # Generate inappropriate data type every third row
+        elif "MobileNumber" in header:
+            row[header] = random.choice([True, False])
+        elif "location" in header:
+            row[header] = fake.address().replace(",", "") # Make sure there's no comma in address
+        else:
+            row[header] = ''
+
+    rows.append(row)
+
+# Write to csv file
+with open('dummy.csv', 'w', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=headers)
+    writer.writeheader()
+    writer.writerows(rows)

@@ -1,0 +1,37 @@
+import csv
+import random
+import faker
+from datetime import datetime, timedelta
+
+# Instantiate Faker
+fake = faker.Faker()
+
+# Define the headers
+headers = ['customerId', 'amount', 'currency', 'sourceAccountId', 'targetAccountId', 'date', 'description', 'TransactionType', 'PaymentType']
+
+# Define a list of currencies, transaction types and payment types
+currencies = ['USD', 'EUR', 'GBP', 'JPY', 'AUD']
+transaction_types = ['Deposit', 'Withdrawal', 'Transfer']
+payment_types = ['Cash', 'Cheque', 'Online Transfer']
+
+# Open the CSV file
+with open('dummy_data.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    
+    # Write the headers
+    writer.writerow(headers)
+
+    # Generate 100 rows of dummy data
+    for _ in range(100):
+        customer_id = random.randint(1000, 9999)
+        amount = round(random.uniform(1, 10000), 2)
+        currency = random.choice(currencies)
+        source_account_id = random.randint(10000, 99999)
+        target_account_id = random.randint(10000, 99999)
+        date = (datetime.now() - timedelta(days=random.randint(1, 365))).strftime('%Y-%m-%d')
+        description = fake.sentence(nb_words=5)
+        transaction_type = random.choice(transaction_types)
+        payment_type = random.choice(payment_types)
+
+        # Write the row
+        writer.writerow([customer_id, amount, currency, source_account_id, target_account_id, date, description, transaction_type, payment_type])

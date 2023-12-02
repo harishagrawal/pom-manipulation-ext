@@ -1,0 +1,40 @@
+import csv
+import random
+import string
+import faker
+
+# Create a faker object
+fake = faker.Faker()
+
+def generate_random_data():
+    # Generate random data for the given variables
+    customerId = random.randint(1000, 9999)
+    botId = "".join(random.choice(string.ascii_letters) for _ in range(10))
+    accountId = random.randint(1000, 9999)
+    koreUserId = "".join(random.choice(string.ascii_letters) for _ in range(10))
+    Authorization = fake.sha256()
+    X_Auth_token = fake.sha256()
+    X_CORRELATION_ID = fake.uuid4()
+
+    # Some inconsistent data
+    if random.choice([True, False]):
+        botId = random.randint(1000, 9999)
+        accountId = "".join(random.choice(string.ascii_letters) for _ in range(10))
+    
+    # Skipping some values
+    if random.choice([True, False]):
+        Authorization = ""
+    if random.choice([True, False]):
+        X_Auth_token = ""
+
+    return [customerId, botId, accountId, koreUserId, Authorization, X_Auth_token, X_CORRELATION_ID]
+
+# Column headers
+headers = ["customerId", "botId", "accountId", "koreUserId", "Authorization", "X-Auth-token", "X-CORRELATION-ID"]
+
+# Create a CSV file
+with open('data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(headers)
+    for _ in range(10):
+        writer.writerow(generate_random_data())

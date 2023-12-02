@@ -1,0 +1,24 @@
+import csv
+import random
+import string
+
+# Define the headers
+headers = ['koreUserId', 'botId', 'userCode', 'accountId']
+
+# Open the CSV file in write mode
+with open('sample.csv', 'w') as csvfile:
+    # Create a CSV writer
+    writer = csv.writer(csvfile)
+
+    # Write the headers
+    writer.writerow(headers)
+
+    # Generate 10 rows of dummy data
+    for _ in range(10):
+        koreUserId = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        botId = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        userCode = random.randint(0, 100000)
+        accountId = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+
+        # Write the row
+        writer.writerow([koreUserId, botId, userCode, accountId])

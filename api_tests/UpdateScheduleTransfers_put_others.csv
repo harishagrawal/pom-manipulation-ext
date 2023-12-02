@@ -1,0 +1,33 @@
+import csv
+import random
+import faker
+from datetime import datetime, timedelta
+
+# Initialize Faker library
+fake = faker.Faker()
+
+# Define headers
+headers = ['paymentId', 'customerId', 'amount', 'scheduledDate', 'sourceAccountId', 'targetAccountId']
+
+# Open CSV file
+with open('sample_data.csv', 'w', newline='') as csvfile:
+
+    # Create CSV writer
+    writer = csv.writer(csvfile)
+
+    # Write headers
+    writer.writerow(headers)
+
+    # Generate rows
+    for _ in range(100):
+
+        # Generate random data
+        paymentId = str(random.randint(1000, 9999)) if random.choice([True, False]) else random.choice(['abc', 'def', 'ghi'])
+        customerId = fake.uuid4() if random.choice([True, False]) else fake.name().replace(',', '')
+        amount = str(random.uniform(1, 1000)) if random.choice([True, False]) else fake.email().replace(',', '')
+        scheduledDate = fake.date_between(start_date='-1y', end_date='+1y').strftime('%Y-%m-%d') if random.choice([True, False]) else str(random.randint(1000, 9999))
+        sourceAccountId = fake.uuid4() if random.choice([True, False]) else fake.name().replace(',', '')
+        targetAccountId = fake.uuid4() if random.choice([True, False]) else fake.name().replace(',', '')
+
+        # Write row
+        writer.writerow([paymentId, customerId, amount, scheduledDate, sourceAccountId, targetAccountId])

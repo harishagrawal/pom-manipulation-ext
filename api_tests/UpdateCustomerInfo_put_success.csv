@@ -1,0 +1,32 @@
+import csv
+import random
+import faker
+import os
+
+# Create a Faker instance
+fake = faker.Faker()
+
+# Define the headers
+headers = ["customerId", "email", "alternatePhoneNumber", "isAlternateMobileNumber", "phone", "isPrimaryMobileNumber", "location"]
+
+# Define a function to generate a row of data
+def generate_data_row():
+    return [fake.random_int(min=1, max=9999),  # customerId
+            fake.email(),  # email
+            fake.phone_number(),  # alternatePhoneNumber
+            fake.random_element(elements=(True, False)),  # isAlternateMobileNumber
+            fake.phone_number(),  # phone
+            fake.random_element(elements=(True, False)),  # isPrimaryMobileNumber
+            fake.address().replace(",", "")]  # location
+
+# Define the file path
+file_path = "dummy_data.csv"
+
+# Open the file in write mode
+with open(file_path, "w", newline="") as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(headers)  # write the headers
+    for _ in range(100):  # generate 100 rows of data
+        writer.writerow(generate_data_row())
+
+print(f"Dummy data CSV file has been created at {os.path.abspath(file_path)}")

@@ -1,0 +1,32 @@
+import csv
+from faker import Faker
+import random
+import string
+
+# Initialize a Faker instance
+fake = Faker()
+
+# Define the number of rows to generate
+num_rows = 10
+
+# Define the column headers
+headers = ['koreUserId', 'botId', 'accountId', 'X-Auth-token', 'X-CORRELATION-ID', 'customerId']
+
+# Open a CSV file in write mode
+with open('dummy_data.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+
+    # Write the headers to the CSV file
+    writer.writerow(headers)
+
+    # Generate and write rows of dummy data
+    for _ in range(num_rows):
+        row = [
+            fake.uuid4(),  # koreUserId
+            fake.uuid4(),  # botId
+            fake.uuid4(),  # accountId
+            ''.join(random.choices(string.ascii_uppercase + string.digits, k=32)),  # X-Auth-token
+            fake.uuid4(),  # X-CORRELATION-ID
+            fake.random_int(min=1000, max=9999)  # customerId
+        ]
+        writer.writerow(row)

@@ -1,0 +1,29 @@
+import csv
+import random
+import string
+from faker import Faker
+
+fake = Faker()
+
+fieldnames = ['koreUserId', 'botId', 'userCode', 'accountId', 'customerId', 'paymentId', 'updateTransferType']
+
+def random_string(length):
+    return ''.join(random.choice(string.ascii_letters) for _ in range(length))
+
+def generate_csv(filename, num_rows):
+    with open(filename, 'w', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+        for _ in range(num_rows):
+            writer.writerow({
+                'koreUserId': random.randint(1, 1000) if random.random() < 0.5 else random_string(5),
+                'botId': random.randint(1, 1000),
+                'userCode': fake.email() if random.random() < 0.5 else random.randint(1, 1000),
+                'accountId': fake.date() if random.random() < 0.5 else random_string(5),
+                'customerId': random_string(5) if random.random() < 0.5 else random.randint(1, 1000),
+                'paymentId': random_string(5) if random.random() < 0.5 else random.randint(1, 1000),
+                'updateTransferType': random.choice(['type1', 'type2', 'type3', '', 'type4'])
+            })
+
+generate_csv('dummy_data.csv', 100)

@@ -1,0 +1,32 @@
+import csv
+import random
+import string
+from random import randint
+
+# Define variables
+variables = ['customerId', 'sourceAccountId', 'amount', 'currency', 'frontImage', 'backImage']
+
+# Define some sample data
+currencies = ['USD', 'EUR', 'JPY', 'GBP', 'AUD']
+images = ['image1.jpg', 'image2.jpg', 'image3.jpg']
+
+# Open a CSV file for writing
+with open('sample.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+
+    # Write column headers
+    writer.writerow(variables)
+
+    # Generate 10 rows of random data
+    for i in range(10):
+        row = [
+            ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(5)),  # customerId
+            ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(5)),  # sourceAccountId
+            random.uniform(1.0, 1000.0),  # amount
+            random.choice(currencies),  # currency
+            random.choice(images) if random.random() > 0.5 else '',  # frontImage
+            random.choice(images) if random.random() > 0.5 else '',  # backImage
+        ]
+
+        # Write the row to the CSV file
+        writer.writerow(row)
