@@ -1,0 +1,7 @@
+customerId,numOfTransactions,startDate,endDate,status
+68583,47.0,,,pending
+109f77cd-7e1d-44c3-bc93-8b770a96f4b6,,04/13/2023,,completed
+5e61e9d8-df38-4702-9b33-85a8d22de79f,,,03/10/2023,completed
+62971,17.0,,,in_process
+59804,33.0,08/18/2023,08/26/2023,completed
+

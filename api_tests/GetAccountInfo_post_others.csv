@@ -1,0 +1,80 @@
+import json
+import random
+import string
+from datetime import datetime
+import csv
+import pandas as pd
+
+# Load the API spec JSON file to reference variable details
+with open('/mnt/data/file-R18wltA7crHC8qMoGFJsK3AE', 'r') as file:
+    api_spec = json.load(file)
+
+# Dummy data generator functions
+def random_string(length, use_digits=False):
+    if use_digits:
+        return ''.join(random.choices(string.digits, k=length))
+    else:
+        return ''.join(random.choices(string.ascii_letters, k=length))
+
+def random_email(use_numbers=False):
+    if use_numbers:
+        return ''.join(random.choices(string.digits, k=7)) + "@example.com"
+    else:
+        return random_string(7) + "@example.com"
+
+def random_date(min_year=1900, max_year=datetime.now().year):
+    start = datetime(min_year, 1, 1, 0, 0, 0)
+    years = max_year - min_year + 1
+    end = start + datetime.timedelta(days=365 * years)
+    return start + datetime.timedelta(seconds=random.randint(0, int((end - start).total_seconds())))
+
+# Specification for required fields
+required_fields = {
+    "customerId_invalid": {"type": "string", "max_length": 15},
+    "botId_invalid": {"type": "string", "max_length": 15},
+    "accountId_invalid": {"type": "string", "max_length": 15},
+    "koreUserId_invalid": {"type": "string", "max_length": 15},
+    "X_CORRELATION_ID_invalid": {"type": "string", "max_length": 15}
+}
+
+# Generate dummy values for each required field
+def generate_value(field, invalid=False, use_digits=False):
+    field_type = required_fields[field]["type"]
+    max_length = required_fields[field].get("max_length", None)
+    
+    if field_type == "string":
+        if max_length:
+            return random_string(max_length, use_digits=use_digits)
+        else:
+            return random_string(random.randint(5, 10), use_digits=use_digits)
+    elif field_type == "email":
+        return random_email(use_numbers=invalid)
+    else:
+        raise Exception("Unsupported type")
+
+# Generate CSV data
+num_records = 5
+csv_data = []
+fields = list(required_fields.keys())
+
+# Add headers
+csv_data.append(fields)
+
+# Generate data
+for _ in range(num_records):
+    record = []
+    for field in fields:
+        value = None
+        # Introduce inappropriate data types and missing values randomly
+        if random.choice([True, False]):
+            value = generate_value(field, invalid=random.choice([True, False]), use_digits=random.choice([True, False]))
+        record.append(value)
+    csv_data.append(record)
+
+# Save to CSV file without quotes
+csv_filename = "/mnt/data/sample_data.csv"
+pd.DataFrame(csv_data).to_csv(csv_filename, index=False, header=False, quoting=csv.QUOTE_NONE)
+
+# Display the data
+pd.read_csv(csv_filename, names=fields)
+

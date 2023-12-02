@@ -1,0 +1,15 @@
+accountNumber,customerId,email,alternatePhoneNumber,isAlternateMobileNumber,phone,isPrimaryMobileNumber,location,isStatement
+74960924,7109,47752,,,(632)880-1865,False,"63188 Scott Falls
+Alvaradomouth, MT 98258",True
+28421550,3153,emorgan@yahoo.com,288-999-4973x1141,True,816-311-2518,True,"079 Martin Turnpike Suite 335
+Collinsfort, SC 51170",False
+18502544,7111,robertsonjonathan@yahoo.com,968-849-2822x47615,,+1-205-525-9310x16500,False,"USNV Fleming
+FPO AA 92699",True
+91562621,6053,xjackson@yahoo.com,,True,(429)301-2904,False,"807 Dunn Village
+Carolynborough, MN 23193",True
+74228080,8449,hernandezpatrick@gmail.com,white,False,417-439-4492x2661,True,"65223 Jackson Views
+Allenland, ND 75527",False
+88383371,7417,38198,,,001-401-131-6100x506,True,"13425 Christina Pines Apt. 809
+New Jamieland, PA 98951",False
+...
+
