@@ -1,0 +1,11 @@
+koreUserId,botId,accountId,Authorization,customerId,sourceAccountId,amount,currency,image,statusCode
+U12345,1234567,A98765,AuthKey123,1045301,S1042346,100.50,USD,{"url":"http://example.com/image1.jpg"},200
+U12346,1234567,A98766,AuthKey124,1045302,S1042347,200.75,USD,{"url":"http://example.com/image2.jpg"},200
+U12347,1234567,A98767,AuthKey125,1045303,S1042348,150.00,USD,{"url":"http://example.com/image3.jpg"},200
+U12348,1234567,A98768,AuthKey126,1045304,S1042349,175.25,USD,{"url":"http://example.com/image4.jpg"},200
+U12349,1234567,A98769,AuthKey127,1045305,S1042350,220.40,USD,{"url":"http://example.com/image5.jpg"},200
+U12350,1234567,A98770,AuthKey128,1045306,S1042351,130.65,USD,{"url":"http://example.com/image6.jpg"},200
+U12351,1234567,A98771,AuthKey129,1045307,S1042352,245.90,USD,{"url":"http://example.com/image7.jpg"},200
+U12352,1234567,A98772,AuthKey130,1045308,S1042353,190.00,USD,{"url":"http://example.com/image8.jpg"},200
+U12353,1234567,A98773,AuthKey131,1045309,S1042354,160.30,USD,{"url":"http://example.com/image9.jpg"},200
+U12354,1234567,A98774,AuthKey132,1045310,S1042355,210.45,USD,{"url":"http://example.com/image10.jpg"},200
