@@ -1,0 +1,11 @@
+koreUserId,botId,accountId,Authorization,customerId,sourceAccountId,amount,currency,image
+user_0001,1234567,account_01,auth_token_01,1045301,acct_000001,150.00,USD,image_0001.png
+user_0002,1234567,account_02,auth_token_02,1045302,acct_000002,200.25,USD,image_0002.png
+user_0003,1234567,account_03,auth_token_03,1045303,acct_000003,300.40,USD,image_0003.png
+user_0004,1234567,account_04,auth_token_04,1045304,acct_000004,450.00,USD,image_0004.png
+user_0005,1234567,account_05,auth_token_05,1045305,acct_000005,500.75,USD,image_0005.png
+user_0006,1234567,account_06,auth_token_06,1045306,acct_000006,600.00,USD,image_0006.png
+user_0007,1234567,account_07,auth_token_07,1045307,acct_000007,700.20,USD,image_0007.png
+user_0008,1234567,account_08,auth_token_08,1045308,acct_000008,800.35,USD,image_0008.png
+user_0009,1234567,account_09,auth_token_09,1045309,acct_000009,900.60,USD,image_0009.png
+user_0010,1234567,account_10,auth_token_10,1045310,acct_000010,1000.00,USD,image_0010.png
