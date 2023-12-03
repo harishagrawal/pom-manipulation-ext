@@ -1,0 +1,11 @@
+koreUserId,botId,accountId,Authorization,customerId,sourceAccountId,amount,currency,image,statusCode
+user1,bot123,acc654,AuthA1Z,1045301,source1234,5000,USD,image1.jpg,200
+user2,bot456,acc787,AuthB2Y,1045302,source5678,3000,EUR,image2.jpg,200
+user3,bot789,acc920,AuthC3X,1045303,source9012,4000,GBP,image3.jpg,200
+user4,bot321,acc543,AuthD4W,1045304,source3456,2000,JPY,image4.jpg,200
+user5,bot654,acc256,AuthE5V,1045305,source7890,1000,USD,image5.jpg,200
+user6,bot987,acc179,AuthF6U,1045306,source1122,6000,CNY,image6.jpg,200
+user7,bot126,acc654,AuthG7T,1045307,source3333,7000,INR,image7.jpg,200
+user8,bot546,acc787,AuthH8S,1045308,source4444,8000,EUR,image8.jpg,200
+user9,bot873,acc920,AuthI9R,1045309,source5555,9000,GBP,image9.jpg,200
+user10,bot394,acc543,AuthJ0Q,1045310,source6666,10000,JPY,image10.jpg,200
