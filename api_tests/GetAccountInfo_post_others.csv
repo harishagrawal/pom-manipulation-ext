@@ -1,0 +1,11 @@
+customerId,firstName,lastName,email,phoneNumber,DOB
+1001,John,Doe,john.doe@gmail.com,1234567890,1985-02-15
+1002,Jane,Smith,jane.smith@hotmail.com,0987654321,1975-07-05
+1003,Bob,Martin,bob.martin@yahoo.com,1112223334,1990-10-30
+1004,Alice,Johnson,alice.johnson@gmail.com,5556667778,1992-05-17
+1005,Charlie,Brown,charlie.brown@hotmail.com,3334445556,1988-11-12
+1006,Emily,Davis,emily.davis@yahoo.com,2223334445,1977-03-25
+1007,Oliver,Taylor,oliver.taylor@gmail.com,4445556667,1995-06-08
+1008,Ava,Miller,ava.miller@hotmail.com,7778889990,1997-12-31
+1009,Noah,Jones,noah.jones@yahoo.com,9990001112,1983-07-21
+1010,Ella,Davis,ella.davis@gmail.com,0001112223,1998-08-24
