@@ -1,0 +1,11 @@
+koreUserId,botId,accountId,Authorization,customerId,sourceAccountId,amount,currency,image,statusCode
+user_001,1234567,acc_1001,AuthKey123,1045300,SA_2001,100.50,USD,{"url":"http://image1.jpg"},200
+user_002,1234567,acc_1002,AuthKey456,1045301,SA_2002,250.00,USD,{"url":"http://image2.jpg"},200
+user_003,1234567,acc_1003,AuthKey789,1045302,SA_2003,315.75,USD,{"url":"http://image3.jpg"},200
+user_004,1234567,acc_1004,AuthKey012,1045303,SA_2004,580.60,USD,{"url":"http://image4.jpg"},200
+user_005,1234567,acc_1005,AuthKey345,1045304,SA_2005,430.20,USD,{"url":"http://image5.jpg"},200
+user_006,1234567,acc_1006,AuthKey678,1045305,SA_2006,760.00,USD,{"url":"http://image6.jpg"},200
+user_007,1234567,acc_1007,AuthKey901,1045306,SA_2007,890.50,USD,{"url":"http://image7.jpg"},200
+user_008,1234567,acc_1008,AuthKey234,1045307,SA_2008,1200.99,USD,{"url":"http://image8.jpg"},200
+user_009,1234567,acc_1009,AuthKey567,1045308,SA_2009,645.80,USD,{"url":"http://image9.jpg"},200
+user_010,1234567,acc_1010,AuthKey890,1045309,SA_2010,780.00,USD,{"url":"http://image10.jpg"},200
