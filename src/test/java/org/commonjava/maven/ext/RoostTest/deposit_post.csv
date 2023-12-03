@@ -1,0 +1,11 @@
+koreUserId,botId,accountId,Authorization,customerId,sourceAccountId,amount,currency,image,statusCode
+1k3j4k5j,bot123,acc456,auth789,1045301,1042346,1000,USD,image1,200
+2l4m5n6o,bot124,acc457,auth790,1045302,1042347,2000,GBP,image2,201
+3o5p6q7r,bot125,acc458,auth791,1045303,1042348,3000,EUR,image3,202
+4p6q7r8s,bot126,acc459,auth792,1045304,1042349,4000,JPY,image4,203
+5q7r8s9t,bot127,acc460,auth793,1045305,1042350,5000,CAD,image5,204
+6r8s9t1u,bot128,acc461,auth794,1045306,1042351,6000,AUD,image6,205
+7s9t1u2v,bot129,acc462,auth795,1045307,1042352,7000,CHF,image7,206
+8t1u2v3w,bot130,acc463,auth796,1045308,1042353,8000,SEK,image8,207
+9u2v3w4x,bot131,acc464,auth797,1045309,1042354,9000,NZD,image9,208
+1v3w4x5y,bot132,acc465,auth798,1045310,1042355,10000,SGD,image10,209
