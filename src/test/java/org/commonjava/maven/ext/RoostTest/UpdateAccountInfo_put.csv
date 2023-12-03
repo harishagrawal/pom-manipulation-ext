@@ -1,0 +1,11 @@
+koreUserId,botId,accountId,Authorization,X-Auth-token,X-CORRELATION-ID,accountNumber,customerId,email,alternatePhoneNumber,isAlternateMobileNumber,phone,isPrimaryMobileNumber,location,isStatement,statusCode
+KU123,BO456,AI789,Auth9876,XT-token7896,635241,1042345,1045301,John1@gmail.com,9876543210,false,1234567890,true,New York,true,200
+KU124,BO457,AI790,Auth9877,XT-token7897,635242,1042346,1045302,John2@gmail.com,9876543211,false,1234567891,true,Los Angeles,true,200
+KU125,BO458,AI791,Auth9878,XT-token7898,635243,1042347,1045303,John3@gmail.com,9876543212,false,1234567892,true,Chicago,true,200
+KU126,BO459,AI792,Auth9879,XT-token7899,635244,1042348,1045304,John4@gmail.com,9876543213,false,1234567893,true,Houston,true,200
+KU127,BO460,AI793,Auth9880,XT-token7900,635245,1042349,1045305,John5@gmail.com,9876543214,false,1234567894,true,Philadelphia,true,200
+KU128,BO461,AI794,Auth9881,XT-token7901,635246,1042350,1045306,John6@gmail.com,9876543215,false,1234567895,true,Phoenix,true,200
+KU129,BO462,AI795,Auth9882,XT-token7902,635247,1042351,1045307,John7@gmail.com,9876543216,false,1234567896,true,San Antonio,true,200
+KU130,BO463,AI796,Auth9883,XT-token7903,635248,1042352,1045308,John8@gmail.com,9876543217,false,1234567897,true,San Diego,true,200
+KU131,BO464,AI797,Auth9884,XT-token7904,635249,1042353,1045309,John9@gmail.com,9876543218,false,1234567898,true,Dallas,true,200
+KU132,BO465,AI798,Auth9885,XT-token7905,635250,1042354,1045310,John10@gmail.com,9876543219,false,1234567899,true,San Jose,true,200
