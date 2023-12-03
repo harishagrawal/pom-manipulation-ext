@@ -1,0 +1,36 @@
+import csv
+import random
+import string
+from faker import Faker
+
+# Create a faker instance
+fake = Faker()
+
+def generate_random_string(length=10):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(length))
+
+# CSV column headers
+headers = ["koreUserId", "botId", "userCode", "accountId", "Authorization", "customerId", "status"]
+
+# Create CSV file
+with open('dummy_data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(headers)  # Write headers
+
+    # Generate rows
+    for i in range(10):
+        koreUserId = generate_random_string()
+        botId = generate_random_string()
+        userCode = generate_random_string()
+        accountId = generate_random_string()
+        Authorization = generate_random_string()
+
+        # Generate a random customerId (number)
+        customerId = random.randint(1000000, 9999999)
+
+        # Generate a random status
+        status = fake.random_element(elements=("Pending", "Active", "Inactive"))
+
+        # Write row
+        writer.writerow([koreUserId, botId, userCode, accountId, Authorization, customerId, status])

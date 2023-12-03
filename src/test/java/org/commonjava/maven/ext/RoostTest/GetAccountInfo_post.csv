@@ -1,0 +1,33 @@
+import csv
+import random
+import string
+import faker
+
+# Initialize Faker Library
+fake = faker.Faker()
+
+def random_string(length=10):
+    """Generate a random string of fixed length """
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(length))
+
+def generate_csv(filename, num_rows=10):
+    headers = ['koreUserId', 'botId', 'accountId', 'Authorization', 'X-Auth-token', 'X-CORRELATION-ID', 'customerId', 'statusCode']
+
+    with open(filename, 'w', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=headers)
+
+        writer.writeheader()
+        for i in range(num_rows):
+            writer.writerow({
+                'koreUserId': random_string(),
+                'botId': random_string(),
+                'accountId': random_string(),
+                'Authorization': fake.sha256(),
+                'X-Auth-token': fake.sha256(),
+                'X-CORRELATION-ID': random.randint(100000, 999999),
+                'customerId': random.randint(1000000, 9999999),
+                'statusCode': random.choice([200, 201, 400, 404, 500])
+            })
+
+generate_csv('dummy_data.csv')

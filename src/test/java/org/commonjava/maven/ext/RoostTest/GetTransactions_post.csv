@@ -1,0 +1,41 @@
+import csv
+import random
+from faker import Faker
+from datetime import datetime, timedelta
+
+fake = Faker()
+
+header = ['koreUserId', 'botId', 'accountId', 'Authorization', 'X-Auth-token', 
+          'X-CORRELATION-ID', 'customerId', 'accountNumber', 'numOfTransactions', 
+          'status', 'startDate', 'endDate', 'sort', 'transactionAmount', 
+          'category', 'debitOrCredit', 'example', 'statusCode']
+
+data = []
+
+for _ in range(10):
+    row = [
+        fake.uuid4(),  # koreUserId
+        fake.uuid4(),  # botId
+        fake.uuid4(),  # accountId
+        fake.sha256(),  # Authorization
+        fake.sha1(),  # X-Auth-token
+        random.randint(100000, 999999),  # X-CORRELATION-ID
+        str(random.randint(1000000, 9999999)),  # customerId
+        [str(random.randint(1000000, 9999999))],  # accountNumber
+        random.randint(1, 100),  # numOfTransactions
+        random.choice(['Posted', 'Not Posted']),  # status
+        (datetime.now() - timedelta(days=random.randint(1, 30))).strftime("%Y-%m-%dT%H:%M:%S.%f+0000"),  # startDate
+        datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f+0000"),  # endDate
+        {'sortKey': 'transactionDate', 'sortOrder': random.choice(['asc', 'desc'])},  # sort
+        {'amount': {'gt': random.randint(1000, 5000)}, 'currency': 'USD'},  # transactionAmount
+        [{'codeType': 'MCC', 'value': [[random.randint(5000, 6000), random.randint(5000, 6000)]], 'source': 'Internal'}],  # category
+        random.choice(['Debit', 'Credit']),  # debitOrCredit
+        {'customerId': str(random.randint(1000000, 9999999)), 'accountNumber': [str(random.randint(1000000, 9999999))], 'category': [{'codeType': 'MCC', 'value': [[random.randint(5000, 6000), random.randint(5000, 6000)]], 'source': 'Internal'}], 'startDate': (datetime.now() - timedelta(days=random.randint(1, 30))).strftime("%Y-%m-%dT%H:%M:%S.%f+0000"), 'endDate': datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f+0000"), 'status': random.choice(['Posted', 'Not Posted']), 'transactionAmount': {'amount': {'gt': random.randint(1000, 5000)}, 'currency': 'USD'}},  # example
+        random.randint(200, 500)  # statusCode
+    ]
+    data.append(row)
+
+with open('dummy_data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(header)
+    writer.writerows(data)

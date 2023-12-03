@@ -1,0 +1,35 @@
+import csv
+import random
+import faker
+
+# Initialize Faker Library
+fake = faker.Faker()
+
+# Define CSV Headers
+csv_headers = ["koreUserId","botId","accountId","Authorization","X-Auth-token","X-CORRELATION-ID","customerId","email","alternatePhoneNumber","isAlternateMobileNumber","phone","isPrimaryMobileNumber","location", "statusCode"]
+
+# Open CSV file in write mode
+with open('dummy_data.csv', 'w', newline='') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=csv_headers)
+
+    # Write CSV Headers
+    writer.writeheader()
+
+    # Generate dummy data for each row
+    for i in range(10):
+        writer.writerow({
+            "koreUserId": fake.uuid4(), 
+            "botId": fake.uuid4(), 
+            "accountId": fake.uuid4(), 
+            "Authorization": fake.sha256(), 
+            "X-Auth-token": fake.sha1(), 
+            "X-CORRELATION-ID": random.randint(100000,999999), 
+            "customerId": random.randint(1000000,9999999), 
+            "email": fake.email(), 
+            "alternatePhoneNumber": fake.phone_number(), 
+            "isAlternateMobileNumber": random.choice([True, False]), 
+            "phone": fake.phone_number(), 
+            "isPrimaryMobileNumber": random.choice([True, False]), 
+            "location": fake.address(), 
+            "statusCode": random.choice([200, 201, 400, 404, 500])
+        })

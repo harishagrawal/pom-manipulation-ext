@@ -1,0 +1,32 @@
+import csv
+import random
+import string
+import faker
+
+fake = faker.Faker()
+
+def random_string(length=10):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(length))
+
+def random_number(length=10):
+    numbers = string.digits
+    return ''.join(random.choice(numbers) for i in range(length))
+
+def random_image():
+    return {"url": fake.image_url()}
+
+data = []
+
+header = ['koreUserId', 'botId', 'accountId', 'Authorization', 'customerId', 'sourceAccountId', 'amount', 'currency', 'image', 'statusCode']
+data.append(header)
+
+for _ in range(10):
+    row = [random_string(), random_string(), random_string(), random_string(), random_number(), random_string(), random_number(), 'USD', random_image(), '200']
+    data.append(row)
+
+filename = "sample_data.csv"
+
+with open(filename, 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile)
+    csvwriter.writerows(data)

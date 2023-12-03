@@ -1,0 +1,37 @@
+import random
+import csv
+import faker
+import datetime
+
+fake = faker.Faker()
+
+# Variables
+koreUserId = [fake.uuid4() for _ in range(10)]
+botId = [fake.uuid4() for _ in range(10)]
+userCode = [fake.uuid4() for _ in range(10)]
+accountId = [fake.uuid4() for _ in range(10)]
+Authorization = [fake.uuid4() for _ in range(10)]
+customerId = [random.randint(1000000, 9999999) for _ in range(10)]
+amount = [random.randint(1, 100) for _ in range(10)]
+currency = [fake.currency_code() for _ in range(10)]
+sourceAccountId = [fake.iban() for _ in range(10)]
+targetAccountId = [fake.iban() for _ in range(10)]
+date = [fake.date_between(start_date='-1y', end_date='today').strftime("%m-%d-%Y") for _ in range(10)]
+description = [fake.sentence() for _ in range(10)]
+TransactionType = [fake.random_element(elements=('1063', '2063', '3063', '4063')) for _ in range(10)]
+PaymentType = [fake.random_element(elements=('Minimum Payment', 'Full Payment')) for _ in range(10)]
+statusCode = [fake.random_element(elements=('200', '400', '500')) for _ in range(10)]
+
+# CSV Headers
+headers = ['koreUserId', 'botId', 'userCode', 'accountId', 'Authorization', 'customerId', 'amount', 'currency', 
+           'sourceAccountId', 'targetAccountId', 'date', 'description', 'TransactionType', 'PaymentType', 'statusCode']
+
+# CSV Data
+data = list(zip(koreUserId, botId, userCode, accountId, Authorization, customerId, amount, currency, 
+                sourceAccountId, targetAccountId, date, description, TransactionType, PaymentType, statusCode))
+
+# Write CSV
+with open('sample_data.csv', 'w', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(headers)
+    writer.writerows(data)

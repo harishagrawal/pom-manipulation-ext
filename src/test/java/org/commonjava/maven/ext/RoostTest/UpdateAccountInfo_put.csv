@@ -1,0 +1,38 @@
+import csv
+import random
+import faker
+from faker import Faker
+fake = Faker()
+
+def generate_data():
+    data = []
+    for _ in range(10):
+        row = {
+            "koreUserId": fake.uuid4(),
+            "botId": fake.uuid4(),
+            "accountId": fake.uuid4(),
+            "Authorization": fake.sha256(),
+            "X-Auth-token": fake.sha1(),
+            "X-CORRELATION-ID": random.randint(100000, 999999),
+            "accountNumber": str(random.randint(1000000, 9999999)),
+            "customerId": random.randint(100000, 999999),
+            "email": fake.email(),
+            "alternatePhoneNumber": random.randint(1000000000, 9999999999),
+            "isAlternateMobileNumber": bool(random.getrandbits(1)),
+            "phone": random.randint(1000000000, 9999999999),
+            "isPrimaryMobileNumber": bool(random.getrandbits(1)),
+            "location": fake.city(),
+            "isStatement": bool(random.getrandbits(1)),
+            "statusCode": random.choice(['200', '400', '404', '500'])
+        }
+        data.append(row)
+    return data
+
+def write_to_csv(data):
+    with open('sample_data.csv', 'w', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=data[0].keys())
+        writer.writeheader()
+        writer.writerows(data)
+
+data = generate_data()
+write_to_csv(data)
