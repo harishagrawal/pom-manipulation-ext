@@ -1,0 +1,23 @@
+import csv
+import pandas as pd
+from faker import Faker
+
+fake = Faker()
+
+# Re-run the CSV generation process including the csv module import
+# Use the previously defined faker_generator function
+# Use the previously defined generate_csv_data function
+
+# Generate 10 records
+num_records = 10
+data_records = generate_csv_data(reference_info, num_records)
+
+# Create DataFrame and convert to CSV format
+data_df = pd.DataFrame(data_records)
+csv_output = data_df.to_csv(index=False, header=True, quoting=csv.QUOTE_NONE)
+
+# Save the CSV to a file and provide the path
+csv_file_name = '/mnt/data/dummy_data.csv'
+with open(csv_file_name, 'w') as file:
+    file.write(csv_output)
+
