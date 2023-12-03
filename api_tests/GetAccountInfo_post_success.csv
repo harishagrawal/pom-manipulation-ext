@@ -1,0 +1,11 @@
+customerId,firstName,lastName,emailAddress,phoneNumber,dateOfBirth
+1234,John,Doe,john.doe@example.com,1234567890,1989-07-05
+1235,Jane,Smith,jane.smith@example.com,1234567891,1992-08-10
+1236,Bob,Johnson,bob.johnson@example.com,1234567892,1990-05-15
+1237,Alice,Williams,alice.williams@example.com,1234567893,1988-12-20
+1238,Chris,Brown,chris.brown@example.com,1234567894,1987-11-03
+1239,Dan,Taylor,dan.taylor@example.com,1234567895,1991-01-19
+1240,Eva,Anderson,eva.anderson@example.com,1234567896,1993-02-08
+1241,Frank,Jones,frank.jones@example.com,1234567897,1986-04-12
+1242,Gina,Miller,gina.miller@example.com,1234567898,1985-05-30
+1243,Henry,Davis,henry.davis@example.com,1234567899,1984-06-21

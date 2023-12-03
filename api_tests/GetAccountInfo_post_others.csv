@@ -1,0 +1,11 @@
+customerId,firstName,lastName,email,phone,address,dateCreated 
+1234,John,Doe,johndoe@example.com,1234567890,123 Main St,2022-01-01
+1235,Jane,Doe,janedoe@example.com,1234567891,456 Main St,2022-01-02
+1236,Jim,Smith,jimsmith@example.com,1234567892,789 Main St,2022-01-03
+1237,Julie,Johnson,juliejohnson@example.com,1234567893,101 Main St,2022-01-04
+1238,Jennifer,Jones,jenniferjones@example.com,1234567894,202 Main St,2022-01-05
+1239,Jake,Jackson,jakejackson@example.com,1234567895,303 Main St,2022-01-06
+1240,Jill,Johnson,jilljohnson@example.com,1234567896,404 Main St,2022-01-07 
+1241,Jackie,James,jackiejames@example.com,1234567897,505 Main St,2022-01-08
+1242,Joe,Johnson,joejohnson@example.com,1234567898,606 Main St,2022-01-09 
+1243,Jessica,Jenkins,jessicajenkins@example.com,1234567899,707 Main St,2022-01-10
