@@ -1,0 +1,36 @@
+import csv
+import random
+import string
+import faker
+
+# Initialize faker generator
+fake = faker.Faker()
+
+def generate_string(size=6, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+def generate_number(digits=8):
+    range_start = 10**(digits - 1)
+    range_end = (10**digits) - 1
+    return random.randint(range_start, range_end)
+
+def generate_dummy_data():
+    koreUserId = generate_string() + '@' + generate_string() + '.com'
+    botId = generate_string()
+    accountId = generate_string()
+    Authorization = fake.sha256()  # Generate a random SHA256 hash
+    X_Auth_token = fake.sha1()  # Generate a random SHA1 hash
+    X_CORRELATION_ID = generate_number()
+    customerId = generate_number()
+    statusCode = random.choice([200, 201, 204, 400, 401, 403, 404])
+    return [koreUserId, botId, accountId, Authorization, X_Auth_token, X_CORRELATION_ID, customerId, statusCode]
+
+
+data = [generate_dummy_data() for _ in range(10)]
+headers = ['koreUserId', 'botId', 'accountId', 'Authorization', 'X-Auth-token', 'X-CORRELATION-ID', 'customerId', 'statusCode']
+
+# Write data to csv file
+with open('dummy_data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(headers)
+    writer.writerows(data)

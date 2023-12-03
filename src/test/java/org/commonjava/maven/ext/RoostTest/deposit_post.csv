@@ -1,0 +1,30 @@
+import csv
+import random
+import string
+import uuid
+
+# define the header
+csv_header = ['koreUserId', 'botId', 'accountId', 'Authorization', 'customerId', 'sourceAccountId', 'amount', 'currency', 'image', 'statusCode']
+
+# define the data rows
+csv_data = []
+
+for _ in range(10):  # generate 10 rows
+    koreUserId = ''.join(random.choices(string.ascii_letters + string.digits, k=10))  # random alphanumeric string
+    botId = ''.join(random.choices(string.ascii_letters + string.digits, k=10))  # alphanumeric string
+    accountId = ''.join(random.choices(string.ascii_letters + string.digits, k=10))  # alphanumeric string
+    Authorization = str(uuid.uuid4())  # uuid string
+    customerId = random.randint(1000000, 9999999)  # 7-digit number
+    sourceAccountId = ''.join(random.choices(string.ascii_letters + string.digits, k=7))  # alphanumeric string
+    amount = str(random.randint(1000, 9999))  # 4-digit number as string
+    currency = random.choice(['USD', 'EUR', 'GBP', 'JPY'])  # choose a random currency
+    image = {'url': 'http://example.com/image{}.jpg'.format(random.randint(1, 100))}  # random image url
+    statusCode = random.randint(200, 500)  # random status code
+    row = [koreUserId, botId, accountId, Authorization, customerId, sourceAccountId, amount, currency, image, statusCode]
+    csv_data.append(row)
+
+# write the data to a CSV file
+with open('data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(csv_header)
+    writer.writerows(csv_data)

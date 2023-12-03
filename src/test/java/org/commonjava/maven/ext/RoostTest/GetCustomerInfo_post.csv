@@ -1,0 +1,33 @@
+import csv
+import random
+import string
+import faker
+
+# Initialize faker module
+fake = faker.Faker()
+
+# Variables to be replaced in the template
+_variables = ["koreUserId", "botId", "accountId", "Authorization", "X-Auth-token", "X-CORRELATION-ID", "customerId", "statusCode"]
+
+# Function to generate a dummy profile or data record
+def generate_dummy_profile():
+    return {
+        "koreUserId": fake.pystr(),
+        "botId": fake.pystr(),
+        "accountId": fake.pystr(),
+        "Authorization": fake.pystr(),
+        "X-Auth-token": fake.pystr(),
+        "X-CORRELATION-ID": fake.random_number(digits=10, fix_len=True),
+        "customerId": fake.random_number(digits=7, fix_len=True),
+        "statusCode": random.choice([200, 201, 204, 400, 401, 403, 404, 500]),
+    }
+
+# Generate 10 dummy profiles
+dummy_profiles = [generate_dummy_profile() for _ in range(10)]
+
+# Write the dummy profiles to a CSV file
+with open("dummy_profiles.csv", "w", newline="") as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=_variables)
+    writer.writeheader()
+    for profile in dummy_profiles:
+        writer.writerow(profile)

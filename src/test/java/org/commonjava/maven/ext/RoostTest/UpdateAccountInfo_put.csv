@@ -1,0 +1,44 @@
+import csv
+from faker import Faker
+import random
+
+# Initialize faker
+fake = Faker()
+
+header = ['koreUserId', 'botId', 'accountId', 'Authorization', 'X-Auth-token',
+          'X-CORRELATION-ID', 'accountNumber', 'customerId', 'email',
+          'alternatePhoneNumber', 'isAlternateMobileNumber', 'phone',
+          'isPrimaryMobileNumber', 'location', 'isStatement',
+          'statusCode']
+
+num_rows = 10
+
+with open('dummy_data.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(header)
+
+    for i in range(num_rows):
+        koreUserId = fake.uuid4()
+        botId = fake.uuid4()
+        accountId = fake.uuid4()
+        Authorization = fake.sha256()
+        X_Auth_token = fake.sha256()
+        X_CORRELATION_ID = fake.random_int(min=1000, max=9999)
+        accountNumber = fake.random_int(min=1000000, max=9999999)
+        customerId = fake.random_int(min=1000000, max=9999999)
+        email = fake.email()
+        alternatePhoneNumber = fake.phone_number()
+        isAlternateMobileNumber = bool(random.getrandbits(1))
+        phone = fake.phone_number()
+        isPrimaryMobileNumber = bool(random.getrandbits(1))
+        location = fake.address().replace('\n', ', ')
+        isStatement = bool(random.getrandbits(1))
+        statusCode = fake.random_int(min=100, max=599)
+
+        writer.writerow([koreUserId, botId, accountId, Authorization, X_Auth_token,
+                         X_CORRELATION_ID, accountNumber, customerId, email,
+                         alternatePhoneNumber, isAlternateMobileNumber, phone,
+                         isPrimaryMobileNumber, location, isStatement,
+                         statusCode])
+
+print("CSV Generation complete.")
