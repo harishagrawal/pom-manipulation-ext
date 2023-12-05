@@ -1,0 +1,7 @@
+email,statusCode,scenario
+john.doe@example.com,201,Successful responses: Created
+jane.doe@example.com,201,Successful responses: Created
+mike.smith@example.com,201,Successful responses: Created
+anna.jones@example.com,400,Client error responses: Bad Request
+bob.johnson@example.com,400,Client error responses: Bad Request
+sam.williams@example.com,400,Client error responses: Bad Request
