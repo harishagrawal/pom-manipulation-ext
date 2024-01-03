@@ -1,0 +1,11 @@
+koreUserId,botId,accountId,Authorization,customerId,sourceAccountId,amount,currency,image,statusCode
+k0r3U53r1,b0t1d1,A3c0u17Id1,Au7h0r1z471on1,Cu570m3r1d1,S0urc3A3c0u17Id1,500,Euro,img1.jpg,200
+k0r3U53r2,b0t1d2,A3c0u17Id2,Au7h0r1z471on2,Cu570m3r1d2,S0urc3A3c0u17Id2,600,USD,img2.jpg,201
+k0r3U53r3,b0t1d3,A3c0u17Id3,Au7h0r1z471on3,Cu570m3r1d3,S0urc3A3c0u17Id3,700,Yen,img3.png,202
+k0r3U53r4,b0t1d4,A3c0u17Id4,Au7h0r1z471on4,Cu570m3r1d4,S0urc3A3c0u17Id4,800,GBP,img4.jpeg,203
+k0r3U53r5,b0t1d5,A3c0u17Id5,Au7h0r1z471on5,Cu570m3r1d5,S0urc3A3c0u17Id5,900,AUD,img5.tif,204
+k0r3U53r6,b0t1d6,A3c0u17Id6,Au7h0r1z471on6,Cu570m3r1d6,S0urc3A3c0u17Id6,250,CAD,img6.bmp,205
+k0r3U53r7,b0t1d7,A3c0u17Id7,Au7h0r1z471on7,Cu570m3r1d7,S0urc3A3c0u17Id7,150,Euro,img7.gif,206
+k0r3U53r8,b0t1d8,A3c0u17Id8,Au7h0r1z471on8,Cu570m3r1d8,S0urc3A3c0u17Id8,350,USD,img8.png,207
+k0r3U53r9,b0t1d9,A3c0u17Id9,Au7h0r1z471on9,Cu570m3r1d9,S0urc3A3c0u17Id9,450,Yen,img9.jpeg,208
+k0r3U53r10,b0t1d10,A3c0u17Id10,Au7h0r1z471on10,Cu570m3r1d10,S0urc3A3c0u17Id10,1000,GBP,img10.bmp,209
