@@ -1,0 +1,11 @@
+account-Id,Consent-ID,date_from,bookingStatus,withBalance,date_to,Content-Type,PSU-ID,statusCode
+ac1,c1,2021-01-01,booked,true,2021-01-31,text/plain,psu1,200
+ac2,c2,2021-02-01,booked,false,2021-02-28,text/csv,psu2,200
+ac3,c3,2021-03-01,booked,true,2021-03-31,application/json,psu3,200
+ac4,c4,2021-04-01,booked,false,2021-04-30,text/plain,psu4,200
+ac5,c5,2021-05-01,booked,true,2021-05-31,text/csv,psu5,200
+ac6,c6,2021-06-01,booked,false,2021-06-30,application/json,psu6,200
+ac7,c7,2021-07-01,booked,true,2021-07-31,text/plain,psu7,200
+ac8,c8,2021-08-01,booked,false,2021-08-31,text/csv,psu8,200
+ac9,c9,2021-09-01,booked,true,2021-09-30,application/json,psu9,200
+ac10,c10,2021-10-01,booked,false,2021-10-31,text/plain,psu10,200
