@@ -1,0 +1,11 @@
+account-Id,Consent-ID,Content-Type,PSU-ID,statusCode
+ACC123,CON456,text/html,PSU789,200
+ACC124,CON457,application/json,PSU790,200
+ACC125,CON458,text/plain,PSU791,200
+ACC126,CON459,application/xml,PSU792,200
+ACC127,CON460,text/css,PSU793,200
+ACC128,CON461,text/javascript,PSU794,200
+ACC129,CON462,text/html,PSU795,200
+ACC130,CON463,application/json,PSU796,200
+ACC131,CON464,text/plain,PSU797,200
+ACC132,CON465,application/xml,PSU798,200

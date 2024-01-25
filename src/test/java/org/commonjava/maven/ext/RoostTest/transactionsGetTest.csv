@@ -1,0 +1,11 @@
+account-Id,Consent-ID,date_from,bookingStatus,withBalance,date_to,Content-Type,PSU-ID,statusCode
+ACC12345,CONSENT6789,2022-01-01,booked,false,2022-01-05,application/json,PSU12345,200
+ACC54321,CONSENT9876,2022-02-01,booked,true,2022-02-05,application/json,PSU54321,200
+ACC11122,CONSENT2223,2022-03-01,booked,false,2022-03-05,application/json,PSU11122,200
+ACC55443,CONSENT3345,2022-04-01,booked,true,2022-04-05,application/json,PSU55443,200
+ACC99887,CONSENT7766,2022-05-01,booked,false,2022-05-05,application/json,PSU99887,200
+ACC66778,CONSENT8899,2022-06-01,booked,true,2022-06-05,application/json,PSU66778,200
+ACC98765,CONSENT5678,2022-07-01,booked,false,2022-07-05,application/json,PSU98765,200
+ACC54433,CONSENT1234,2022-08-01,booked,true,2022-08-05,application/json,PSU54433,200
+ACC33669,CONSENT5678,2022-09-01,booked,false,2022-09-05,application/json,PSU33669,200
+ACC11223,CONSENT9111,2022-10-01,booked,true,2022-10-05,application/json,PSU11223,200
