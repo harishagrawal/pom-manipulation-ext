@@ -1,0 +1,11 @@
+account-Id,Consent-ID,withBalance,Content-Type,PSU-ID,statusCode
+abc-123,cons-456,true,application/json,psu-789,200
+xyz-321,cons-654,false,application/xml,psu-987,200
+ghj-345,cons-123,true,application/json,psu-543,200
+mno-678,cons-341,false,application/xml,psu-789,200
+rst-111,cons-222,true,application/json,psu-333,200
+uvw-444,cons-555,false,application/xml,psu-888,200
+abc-777,cons-666,true,application/json,psu-111,200
+def-222,cons-333,false,application/xml,psu-444,200
+ghi-555,cons-444,true,application/json,psu-555,200
+jkl-999,cons-888,false,application/xml,psu-777,200
