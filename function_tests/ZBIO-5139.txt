@@ -1,0 +1,71 @@
+Functional Test Cases:
+
+Credit Card Application:
+
+- Test Case 1:
+    - Input: Valid personal, income, and contact information.
+    - Action: Submission of credit card application.
+    - Expected Output: Application submitted successfully.
+- Test Case 2:
+    - Input: Invalid or incomplete information.
+    - Action: Submission of credit card application.
+    - Expected Output: Error message displayed requesting valid or missing information.
+
+Waiving Off Charges:
+
+- Test Case 3:
+    - Input: Request to waive off an unexpected fee.
+    - Action: Review customer’s history and decide to waive off the charges.
+    - Expected Output: Charges are waived, and updated balance reflects on the account.
+
+Redeeming Points:
+  
+- Test Case 4:
+    - Input: Valid request to redeem points.
+    - Action: Redemption of points for specified benefits.
+    - Expected Output: Rewards are claimed successfully and points balance is updated.
+
+Credit Limit Extension:
+   
+- Test Case 5:
+    - Input: Evaluating a customer’s creditworthiness, payment history, and income stability.
+    - Action: Decision to increase the credit limit.
+    - Expected Output: Credit limit is increased, and customer is notified.
+
+Credit Limit Reduction:
+   
+- Test Case 6:
+    - Input: Negative changes in a customer’s financial situation or risk profile.
+    - Action: Decision to reduce the credit limit.
+    - Expected Output: Credit limit is reduced, and customer is notified.
+
+Promotional Balance Transfers:
+
+- Test Case 7:
+    - Input: Submit request to transfer balance.
+    - Action: Apply promotional offer to balance transfer.
+    - Expected Output: Balance transferred successfully under promotional offer terms.
+
+
+Non-Functional Test Cases:
+
+- Test Case 8:
+    - Check the system's response time when a user tries to apply for a credit card.
+
+- Test Case 9:
+    - Check the banking system's ability to handle multiple credit card applications simultaneously.
+
+- Test Case 10:
+    - Check the behavior of the system when connection is lost during the credit card application process.
+
+- Test Case 11:
+   - Verify if the secure protocols are used in the system while entering and storing personal and financial data.
+
+- Test Case 12:
+    - Check the behavior of the system when limit for maximum number of attempts is reached for unsuccessful credit card applications.
+
+- Test Case 13:
+    - Verify that the system should send email or SMS notification upon successful completion of each action (like Fee Waiving, Points Redemption, Credit Limit Update).
+
+- Test Case 14:
+    - Verify the data integrity while transferring balance from one card to another under a promotional offer.
