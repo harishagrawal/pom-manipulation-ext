@@ -1,0 +1,66 @@
+Functional Test cases:
+
+1. Credit Card Application:
+   - A customer should be able to access the credit card application online or at a bank branch.
+     Input: Enter valid identification, income details, and contact information
+     Expected Output: The application is successfully submitted.
+     Edge Case: When invalid or incomplete information is entered, an appropriate error message is displayed.
+     
+   - Verify that the customer receives a confirmation message after successfully submitting the application.
+     Input: A completed credit card application.
+     Expected Output: Confirmation message is presented to the customer.
+
+2. Waiving Off Charges:
+   - The customer should be able to report an unexpected fee via their online account or over the phone.
+     Input: Customer reports an unexpected fee.
+     Expected Output: Fee report is successfully submitted.
+     Edge Case: If customer attempts to submit a duplicate fee report, an appropriate error message should occur.
+
+   - Verify the bank is able to review the customer's history and consider waiving off the charges.
+     Input: Bank reviews customer history.
+     Expected Output: Decision to waive off charges is made based on review.
+
+3. Redeeming Points:
+   - The customer should be able to redeem their reward points for various benefits.
+     Input: Customer selects reward of choice to redeem.
+     Expected Output: Reward is successfully redeemed.
+     Edge Case: If points are insufficient for reward, an error message is displayed.
+
+4. Credit Limit Extension:
+   - The customer receives a notification once their credit limit has been increased.
+     Input: Bank decides to increase customer's credit limit.
+     Expected Output: Customer receives notification of credit limit increase.
+
+5. Credit Limit Reduction:
+   - The customer receives a notification once their credit limit has been decreased.
+     Input: Bank decides to decrease customer's credit limit.
+     Expected Output: Customer receives notification of credit limit decrease.
+
+6. Promotional Balance Transfers:
+   - The customer should be able to transfer high-interest balances from other credit cards.
+     Input: Customer initiates a balance transfer.
+     Expected Output: Balance transfer is successful.
+
+
+Non-Functional Test cases:
+
+1. Usability:
+   - The credit card application form should be user-friendly with clear instructions.
+
+2. Performance:
+   - The customer's online account should load within an acceptable timeframe.
+
+3. Security:
+   - The customer's sensitive information should be encrypted and secure from unauthorized access.
+
+4. Compatibility:
+   - The online banking portal should be compatible across different browsers and mobile devices.
+
+5. Availability:
+   - The online banking portal should be available 24/7 for customers.
+
+6. Scalability:
+   - The system should be able to handle an increase in the number of credit card applications or customer accounts.
+
+7. Fault tolerance:
+   - The system should provide an error message and guide the user to recover and continue instead of crash abruptly when incorrect inputs are made.

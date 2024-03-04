@@ -1,0 +1,48 @@
+Functional Test Cases:
+
+Test Case 1: Overdue Payment Notification
+- Input: John forgets to clear his due credit card bill.
+- Expected Output: The system should flag John's account for non-payment a few days after his due date.
+- Edge Case: If the notification system is down, the bank should ensure the notice is sent as soon as it's up again.
+
+Test Case 2: Sending Reminder Email or SMS
+- Input: John's account is flagged for non-payment.
+- Expected Output: The bank's system should automatically send an email or SMS reminding him of the outstanding payment.
+
+Test Case 3: Initiating Follow-Up Process
+- Input: John continues to ignore the bank's notifications.
+- Expected Output: The bank should initiate a more personalized follow-up process which could include a phone call from a customer service representative.
+
+Test Case 4: Late Payment Fee Waiver
+- Input: Mary requests for a late payment fee waiver based on her excellent payment history.
+- Expected Output: The customer service representative should be able to view Mary's payment history, consider her past record and waive off her late fee as a one-time goodwill gesture.
+
+Test Case 5: Late Payment Interest Charges
+- Input: David frequently pays his credit card bill late.
+- Expected Output: The bank should charge David a late payment interest fee and clearly communicate this to him with advice on how to avoid such charges in the future.
+
+Test Case 6: Debt Collection & Recovery
+- Input: Lisa stops making credit card payments and ignores all alerts and communications from her bank.
+- Expected Output: The bank should move Lisa's account to the collection department which should then contact her, possibly involving a debt collection agency or taking legal action if she doesn't respond.
+
+Non-Functional Test Cases:
+
+Test Case 1: Performance
+- Input: Numerous accounts are overdue simultaneously.
+- Expected Output: The system should be able to handle multiple overdue accounts simultaneously without any decrease in performance.
+
+Test Case 2: Security
+- Input: A customer’s credit card information is being processed.
+- Expected Output: The bank's system should securely handle customer's information ensuring it's not leaked or compromised.
+
+Test Case 3: Reliability
+- Input: The system is operational for an extended period.
+- Expected Output: The system should reliably work for extended periods without showing signs of slowing down or becoming unresponsive.
+
+Test Case 4: Usability
+- Input: A bank employee tries to view a customer’s payment history.
+- Expected Output: The user interface should be intuitive, simple to understand and quick to respond. The process to view payment history should not take more than a few clicks.
+
+Test Case 5: Maintainability
+- Input: A need arises to add a new feature or fix a bug in the system.
+- Expected Output: The code and the system’s structure should allow for easy updates and fixes.

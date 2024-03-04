@@ -1,0 +1,51 @@
+Functional Test Cases:
+
+- Test if the credit card due reminder is sent to the cardholder on the correct schedule.
+   - Input: Due date is 5 days away.
+   - Expected Output: User receives a reminder notification. 
+
+- Test if the overdue balance alert is sent after the due date has passed.
+   - Input: User's payment due date has been missed.
+   - Expected Output: User receives an alert about overdue balance.
+
+- Test if the collection notification is sent when the account becomes significantly delinquent.
+   - Input: User's account is significantly delinquent.
+   - Expected Output: User receives a formal collection notification.
+
+- Test if the card issuer offers a payment plan proposal to the cardholder who cannot pay the full balance.
+   - Input: User is unable to pay the full overdue balance.
+   - Expected Output: User receives a payment plan proposal from the card issuer.
+
+- Test if a collection agency gets involved when the cardholder fails to respond to earlier notifications.
+   - Input: User fails to respond to previous notifications and reminders.
+   - Expected Output: Collection agency gets involved in recovering the overdue balance.
+
+- Test if legal action is initiated by the card issuer in cases of extreme non-payment.
+   - Input: User has extremely delinquent account.
+   - Expected Output: Legal action is initiated against the user.
+
+Non-Functional Test Cases:
+
+- Check if the reminder, alert, notifications, and proposals are user-friendly and easy to read.
+    - Input: Notification texts.
+    - Expected Output: Notifications with clear and user-friendly language.
+
+- Check if the notifications are sent reliably without delays.
+    - Input: Timed notifications.
+    - Expected Output: Notifications are sent out on time.
+
+- Check if the notifications are sent without errors or typographical mistakes.
+    - Input: Notification texts.
+    - Expected Output: Error-free notifications sent to the user.
+
+- Verify the robustness and security of the platform that is sending these notifications.
+    - Input: Platform security and robustness parameters.
+    - Expected Output: Secure and reliable notification delivery platform.
+
+- Check the load handling capability of the system when sending mass notifications.
+    - Input: number of users exceeds certain limit.
+    - Expected Output: System is able to handle the load and send notifications efficiently. 
+
+- Verify that the process is compliant with legal and privacy regulations.
+    - Input: Compliance requirements for privacy and legal regulations.
+    - Expected Output: Process is fully compliant with required rules and regulations.
