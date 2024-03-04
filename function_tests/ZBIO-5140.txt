@@ -1,0 +1,44 @@
+Functional Tests:
+
+1. Consent and Authorization:
+   - Test if the app accepts user registration and login. Expected output: User should be able to successfully register and login.
+   - Test the permissions grant process. Input: Necessary account permissions. Expected output: App should accept the permissions and allow access to financial data.
+   
+2. Accessing Financial Details:
+   - Test the Open Banking APIs for data fetch operation. Input: Sarah's banking and credit card account details. Expected output: API should return her financial details: credit limits, balances, due dates, and minimum payment information.
+   - Validate if the fetched details are correct. Input: Sarah's actual account details. Expected output: Match with the fetched account details.
+
+3. Consolidated Dashboard:
+   - Test if the app successfully consolidates all data into a single dashboard. Expected output: A single dashboard displaying all Sarah's bank and credit card accounts, with up-to-date balance and due date info.
+   - Test the summary view functionality. Expected output: The app should show a summarized view of all her financial details.
+
+4. Payment Scheduling and Automation:
+   - Test if the app allows scheduling monthly payments. Input: Amount, account information, and date. Expected: The app should schedule the payment on given date.
+   - Test the transaction process using Open Banking APIs. Expected output: The app should successfully make the payment to the respective credit card accounts.
+
+5. Payment Confirmation and Alerts:
+   - Check if the app sends confirmation alert on successful payment. Expected output: A successful transaction message.
+   - Test if the app sends upcoming payment alerts. Expected output: An alert on upcoming payment.
+   - Test if the app sends alerts of any potential issues, such as insufficient funds. Expected output: An alert on insufficient funds.
+
+Non Functional Tests:
+
+1. Usability:
+   - Test if the app provides user-friendly interfaces.
+   - Test if the app provides help or guideline to understand its functionalities.
+
+2. Performance:
+   - Test if the app can handle multiple transactions.
+   - Test the response time when fetching data using Open Banking APIs.
+   
+3. Security:
+   - Check if the sensitive data (like account details) are encrypted.
+   - Check if the user session expires after a certain amount of inactivity time.
+
+4. Compatibility:
+   - Test if the app is compatible across different platforms i.e., Android, iOS.
+   - Check if the app UI remains consistent in both portrait and landscape modes.
+
+5. Reliability:
+   - Test if the app can recover from a crash.
+   - Test if the app works in case of lost connectivity during transaction process. The app should set status accordingly. If the process was completed, then it should show successful. If not, then it should alert or retry the process.
