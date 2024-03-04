@@ -1,0 +1,57 @@
+FUNCTIONAL TEST CASES:
+
+1. Test Case: User Registration
+   - Input: First Name, Last Name, Email, Password
+   - Expected Output: Registration success message and login page
+   - Edge Cases: Verify user cannot register with existing email
+  
+2. Test Case: Granting Authorization for Data Access
+   - Input: Allow access to financial data
+   - Expected Output: Successful authorization message 
+   - Edge Cases: Verify app functions correctly without authorization
+   
+3. Test Case: Open Banking API Integration
+   - Input: Implementation of Open Banking APIs in the app
+   - Expected Output: Successful fetch of user financial records
+   - Edge Cases: Check app functionality if APIs fail or fetch inaccurate information
+   
+4. Test Case: Credit Card Information Consolidation
+   - Input: Credit card details
+   - Expected Output: Consolidated dashboard with credit card details
+   - Edge Cases: Verify correct information display if user has multiple cards
+   
+5. Test Case: Auto-payment Setup
+   - Input: Auto-payment details
+   - Expected Output: Successful auto-payment setup confirmation
+   - Edge Cases: Verify accuracy of auto-deduction on specified dates
+   
+6. Test Case: Payment Confirmation and Alert Notifications
+   - Input: Successful payment 
+   - Expected Output: Confirmation notification of payment
+   - Edge Cases: Verify alert notification when insufficient funds are in the account
+
+NON FUNCTIONAL TEST CASES:
+
+1. Test Case: Application Load Time
+   - Input: Opening the application
+   - Expected Output: App should load within 3 seconds
+   
+2. Test Case: Response Time 
+   - Input: Any task within the app
+   - Expected Output: App should respond within acceptable time limit
+   
+3. Test Case: Security Check
+   - Input: User's sensitive data
+   - Expected Output: All user data should be stored securely
+   
+4. Test Case: Payment Failures
+   - Input: Insufficient funds
+   - Expected Output: App should handle the failure gracefully and notify the user
+   
+5. Test Case: User Interface
+   - Input: UI/UX Design
+   - Expected Output: UI should be user-friendly and understandable for a layman user   
+   
+6. Test Case: Data Consistency
+   - Input: User's financial data
+   - Expected Output: Retrieved data should be current and accurate, no data inconsistency should occur.

@@ -1,0 +1,51 @@
+Functional Tests:
+
+1. Validate Credit Card Due Date and Balance
+   - Input: Valid Credit Card number
+   - Expected Output: Credit Card Due Date and actual balance is displayed correctly
+   - Edge Case: Invalid card numbers, expired card numbers
+
+2. Retrieve Unpaid and Overdue Balance
+   - Input: Valid Credit Card number
+   - Expected Output: Unpaid and overdue balance is displayed correctly 
+   - Edge Case: Card previously reported lost/stolen, credit card with zero balance, credit card with only pending transactions
+
+3. Initiate a Call to User for Unpaid and Overdue Balance
+   - Input: User phone number and credit card details
+   - Expected Output: A call to the user is initiated
+   - Edge Case: Unavailable or incorrect contact number, call during non-working hours
+
+4. Collect Payment for Balance
+   - Input: Payment amount
+   - Expected Output: Payment gets credited and balance gets updated correctly
+   - Edge Case: Insufficient funds in bank account, partial payments, multiple payments on the same day
+
+5. Update The Credit Card Balance Post Payment
+   - Input: Payment amount and credit card details
+   - Expected Output: Updated balance after payment is received is shown correctly
+   - Edge Case: Multiple payments on the same day, payment in different currency
+
+Non-Functional Tests:
+
+1. Performance Test:
+   - Check the responsiveness in fetching the Credit Card Due Date and actual balance 
+   - Assess the time taken to initiate the call to the user
+
+2. Security Test:
+   - Check if sensitive customer's card information is protected when processed
+   - Test if the system is secure against unauthorized access to payment details
+
+3. Usability Test:
+   - Check the ease of navigating through the application for retrieving overdue balance and making payments
+   - Validate the accuracy of inputs and Error messages are provided for invalid inputs
+
+4. Compatibility Test:
+   - Check if the application works correctly on different operating systems and browsers when making payments
+
+5. Recovery Test:
+   - Check how quickly the system recovers from crashes during the payment procedures.
+
+6. Localization Test:
+   - Check if the card dates, currency, and balance display correctly as per the users’ locale
+
+Note: For all the tests, it is assumed that proper error messages and exceptions will be handled in case of any failures.
