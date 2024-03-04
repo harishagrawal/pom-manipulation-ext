@@ -1,0 +1,33 @@
+Functional Test Cases:
+
+1. Test case to fetch the due date and balance of a given credit card
+    - Input: Credit Card ID
+    - Expected Output: Due date and balance details
+    - Edge case: Non-exist credit card, the system should give an appropriate error message.
+
+2. Test case to check if a call is arranged to the user when the balance is unpaid and overdue
+    - Input: Credit Card ID.
+    - Expected Output: *overdue and unpaid status detected* and Call arranged to user.
+    - Edge case: User's contact information is not available, system should take an appropriate action (like sending an e-mail)
+
+3. Test case to verify if payment, once collected, updates the card balance
+    - Input: Payment details & credit card ID
+    - Expected Output: Updated card balance details. Card balance reduced by the payment amount.
+    - Edge case: If payment is higher than unpaid balance, system should handle accordingly (E.g., show user's credit balance).
+
+Non Functional Test Cases:
+
+1. Test Case to validate response time taken for fetching credit card due date and balance info
+    - Input: Credit Card ID
+    - Expected Output: Due date and balance details
+    - Edge Case: In case of heavy load, the system must return a response in an acceptable period of time.
+
+2. Test Case to check system behavior under load when multiple payments are processing at the same time
+    - Input: Multiple payment details at high load
+    - Expected Output: All payments processed and all credit card balances updated.
+    - Edge case: System must handle all transactions and update balances accurately without any failure or mistakes.
+
+3. Test case to check system’s continuity when the payment gateway goes down or behaves abnormally
+    - Input: Payment details while system is down
+    - Expected Output: An error message indicating the server is down, request for patient or make a later retry.
+    - Edge case: Test if the system ensures no loss of data during an anomaly and recovery process, and that the system recovers within a reasonable period of time.
