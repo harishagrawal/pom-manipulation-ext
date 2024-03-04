@@ -1,0 +1,41 @@
+Functional Test Cases:
+
+1. Overdue Payment Notification
+   - Test the functionality of automatic email or SMS sent by the system whenever a payment is missed on the due date. 
+       * Input: Missed credit card payment date.
+       * Expected output: An automatic email or SMS from the system to the user. Edge case: No internet connectivity for the user.
+   - Test if the system initiates a follow-up process when John still doesn't make the payment.
+       * Input: No payment after the first notification.
+       * Expected output: Personalized notifications or a call to the user. Edge case: John's number is incorrect in the system.
+
+2. Late Payment Fee Waiver
+   - Check if the system allows the representative to review Mary's account and payment history.
+       * Input: Mary's bank account details.
+       * Expected output: Details of Mary's payment history. Edge case: Mary changed her bank and her history from the previous bank is not available.
+   - Test if the system supports a feature to waive off late payment fee.
+       * Input: Waiver request for late payment fee.
+       * Expected output: Zero late payment fee in Mary's account. Edge case: System is down when request is made.
+
+3. Late Payment Interest Charges
+   - Check the functionality for the system to automatically apply a late payment interest fee due to repetitive late payments.
+       * Input: Late payment.
+       * Expected output: Appropriate late payment interest charge reflected in David's account. Edge case: Other charges getting added with late payment fee.
+   - Test the functionality for the system to communicate these charges and advice for future to David.
+       * Expected output: Communication regarding the charge and advice to David.
+
+4. Debt Collection & Recovery
+   - Validate the automated function of moving an account to the collection department after a certain period of non-payment.
+       * Input: Non-payment for several months.
+       * Expected output: Lisa's account is transferred to the collection department. Edge case: Account is transferred before the stated period.
+   - Verify the procedure where Lisa is contacted and offered with options to manage her outstanding debt.
+       * Expected output: Communication and options for debt management sent to Lisa.
+   - Check the functionality of involving a debt collection agency if Lisa still fails to respond.
+       * Input: No response from Lisa even after previous steps.
+       * Expected output: Involvement of debt collection agency. Edge case: Inaccurate information forwarded to the collection agency.
+
+Non-Functional Test Cases:
+
+1. Test the performance of the system that it can handle the tasks for multiple users simultaneously.
+2. Check the system reliability, that the notifications for overdue payment notification, late payment fee waiver are sent accurately and on time.
+3. Validate the security of the system, that banking information is protected and secured during all these transactions.
+4. Assess the system usability to make sure all the processes are user-friendly and efficient for customer service representatives.
