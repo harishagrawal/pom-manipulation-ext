@@ -1,0 +1,43 @@
+Functional Test Cases:
+--------------
+1. Title: Validate the current unpaid card balance
+   - Input: None
+   - Expected Output: System shows the correct unpaid balance for the card
+   - Edge Case: For new cards, the unpaid balance should be 0
+
+2. Title: Verify the payment due date
+   - Input: None
+   - Expected Output: System shows the correct due date for the payment
+   - Edge Case: For newly created cards, the payment due date should be one billing cycle from the card issued date
+
+3. Title: Verify if the system triggers a call once the payment date is past due
+   - Input: Payment date past due
+   - Expected Output: System triggers an automated call for payment collection
+   - Edge Case: If the card is new and no payment due, no call should be triggered
+
+4. Title: Test the card payment collection process via card payment
+   - Input: Valid Card Details
+   - Expected Output: System should successfully collect the payment and update the balance
+   - Edge Case: If the card details are invalid, payment should not be successful
+
+5. Title: Validate after card payment, the unpaid balance gets updated
+   - Input: Payment Amount
+   - Expected Output: Card balance should be reduced by the paid amount
+   - Edge Case: If the payment amount is more than the unpaid balance, the extra amount might be credited to the account
+
+Non-Functional Test Cases:
+--------------
+1. Title: Check the system's response time when retrieving card balance
+   - Expected Output: The system's response time should be within acceptable limits
+
+2. Title: Verify the system's ability to handle multiple users checking their unpaid card balance at the same time
+   - Expected Output: The system should be able to handle high concurrent load without performance degradation
+
+3. Title: Test the reliability of the automated call system
+   - Expected Output: The automated call system should work flawlessly over a prolonged period of time
+
+4. Title: Test the security of the payment collection process
+    - Expected Output: All transactions and card details should be encrypted and secure from breaches
+
+5. Title: Check the disaster recovery time of the card payment collection system
+    - Expected Output: The system should be able to recover from a crash or malfunction in under a defined period.
