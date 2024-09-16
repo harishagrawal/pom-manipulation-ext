@@ -1,0 +1,11 @@
+account-Id,Consent-ID,withBalance,Content-Type,PSU-ID,statusCode
+Acc-1,Cons-001,FALSE,application-1,PSU-0001,200
+Acc-2,Cons-002,TRUE,application-2,PSU-0002,200
+Acc-3,Cons-003,FALSE,application-3,PSU-0003,200
+Acc-4,Cons-004,TRUE,application-4,PSU-0004,200
+Acc-5,Cons-005,FALSE,application-5,PSU-0005,200
+Acc-6,Cons-006,TRUE,application-6,PSU-0006,200
+Acc-7,Cons-007,FALSE,application-7,PSU-0007,200
+Acc-8,Cons-008,TRUE,application-8,PSU-0008,200
+Acc-9,Cons-009,FALSE,application-9,PSU-0009,200
+Acc-10,Cons-010,TRUE,application-10,PSU-0010,200
